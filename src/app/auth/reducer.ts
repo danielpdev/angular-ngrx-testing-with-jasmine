@@ -8,7 +8,7 @@ import { loginSuccess, logoutSuccess } from './actions';
 import { User } from './user';
 
 export interface State {
-  user: User | null;
+  user: User;
 }
 
 export const initialState: State = {
@@ -23,8 +23,5 @@ export const reducer = createReducer(
 
 export const selectAuthState = createFeatureSelector<State>('auth');
 
-export const getUser = createSelector(selectAuthState, state => { 
-  console.log(555, state);
- return state.user
-});
+export const getUser = createSelector(selectAuthState, state => state.user);
 export const getLoggedIn = createSelector(getUser, user => !!user);

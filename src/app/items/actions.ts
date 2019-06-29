@@ -1,4 +1,5 @@
 import { props, createAction } from '@ngrx/store';
+import { Item } from './item';
 
 export const loadData = createAction(
   '[DataActions] Load Data',
@@ -17,5 +18,5 @@ export const refreshData = createAction(
 
 export const loadDataSuccess = createAction(
   '[DataActions] loadDataSuccess',
-  props<{ items: number[]}>()
+  props<{ items: Item[]}>()
 );

@@ -8,11 +8,11 @@ import { loadData, refreshItems, loadDataSuccess } from './actions';
 import { Item } from './item';
 
 export interface State {
-  items: Item[] | null;
+  items: Item[];
 }
 
 export const initialState: State = {
-  items: [],
+  items: null
 };
 
 export const reducer = createReducer(
@@ -29,5 +29,4 @@ export const reducer = createReducer(
 );
 
 export const selectItemsState = createFeatureSelector<State>('items');
-
 export const selectFeatureItems = createSelector(selectItemsState, state => state.items);
